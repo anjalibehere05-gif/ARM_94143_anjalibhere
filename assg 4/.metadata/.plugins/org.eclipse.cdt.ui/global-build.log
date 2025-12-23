@@ -1,0 +1,149 @@
+19:49:34 **** Incremental Build of configuration Debug for project Switch.c ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/my_switch.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/my_switch.d" -MT"Src/my_switch.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/my_switch.o"
+../Src/my_switch.c: In function 'switch_init':
+../Src/my_switch.c:17:31: error: 'O' undeclared (first use in this function)
+   17 |         GPIOA->MODER &= ~(3<<(O*2));
+      |                               ^
+../Src/my_switch.c:17:31: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:37: Src/my_switch.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:50:57 **** Incremental Build of configuration Debug for project Led.c ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+../Src/led.c: In function 'led_init':
+../Src/led.c:13:9: error: 'RCC' undeclared (first use in this function)
+   13 |         RCC->AHB1ENR |= BV(3);
+      |         ^~~
+../Src/led.c:13:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/led.c:13:25: warning: implicit declaration of function 'BV' [-Wimplicit-function-declaration]
+   13 |         RCC->AHB1ENR |= BV(3);
+      |                         ^~
+../Src/led.c:15:9: error: 'GPIOD' undeclared (first use in this function)
+   15 |         GPIOD->MODER &= ~(BV(25));
+      |         ^~~~~
+../Src/led.c: In function 'led_on':
+../Src/led.c:28:9: error: 'GPIOD' undeclared (first use in this function)
+   28 |         GPIOD->ODR |= BV(12);
+      |         ^~~~~
+../Src/led.c: In function 'led_off':
+../Src/led.c:32:9: error: 'GPIOD' undeclared (first use in this function)
+   32 |         GPIOD->ODR &= ~(BV(12));
+      |         ^~~~~
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:50:58 **** Incremental Build of configuration Debug for project Led_genric.c ****
+make -j12 all 
+arm-none-eabi-size  Led_genric.c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1032	      4	   1564	   2600	    a28	Led_genric.c.elf
+Finished building: default.size.stdout
+ 
+19:50:58 **** Incremental Build of configuration Debug for project Switch.c ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/my_switch.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/my_switch.d" -MT"Src/my_switch.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/my_switch.o"
+../Src/my_switch.c: In function 'switch_init':
+../Src/my_switch.c:17:31: error: 'O' undeclared (first use in this function)
+   17 |         GPIOA->MODER &= ~(3<<(O*2));
+      |                               ^
+../Src/my_switch.c:17:31: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:37: Src/my_switch.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:53:46 **** Incremental Build of configuration Debug for project Led.c ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+../Src/led.c: In function 'led_init':
+../Src/led.c:13:9: error: 'RCC' undeclared (first use in this function)
+   13 |         RCC->AHB1ENR |= BV(3);
+      |         ^~~
+../Src/led.c:13:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/led.c:13:25: warning: implicit declaration of function 'BV' [-Wimplicit-function-declaration]
+   13 |         RCC->AHB1ENR |= BV(3);
+      |                         ^~
+../Src/led.c:15:9: error: 'GPIOD' undeclared (first use in this function)
+   15 |         GPIOD->MODER &= ~(BV(25));
+      |         ^~~~~
+../Src/led.c: In function 'led_on':
+../Src/led.c:28:9: error: 'GPIOD' undeclared (first use in this function)
+   28 |         GPIOD->ODR |= BV(12);
+      |         ^~~~~
+../Src/led.c: In function 'led_off':
+../Src/led.c:32:9: error: 'GPIOD' undeclared (first use in this function)
+   32 |         GPIOD->ODR &= ~(BV(12));
+      |         ^~~~~
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:53:46 **** Incremental Build of configuration Debug for project Led_genric.c ****
+make -j12 all 
+arm-none-eabi-size  Led_genric.c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1032	      4	   1564	   2600	    a28	Led_genric.c.elf
+Finished building: default.size.stdout
+ 
+19:53:47 **** Incremental Build of configuration Debug for project Switch.c ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/my_switch.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/my_switch.d" -MT"Src/my_switch.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/my_switch.o"
+../Src/my_switch.c: In function 'switch_init':
+../Src/my_switch.c:17:31: error: 'O' undeclared (first use in this function)
+   17 |         GPIOA->MODER &= ~(3<<(O*2));
+      |                               ^
+../Src/my_switch.c:17:31: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:37: Src/my_switch.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/main.c: In function 'main':
+../Src/main.c:36:21: warning: implicit declaration of function 'switch_Read' [-Wimplicit-function-declaration]
+   36 |                 if (switch_Read())
+      |                     ^~~~~~~~~~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:54:27 **** Incremental Build of configuration Debug for project Led.c ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+../Src/led.c: In function 'led_init':
+../Src/led.c:13:9: error: 'RCC' undeclared (first use in this function)
+   13 |         RCC->AHB1ENR |= BV(3);
+      |         ^~~
+../Src/led.c:13:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/led.c:13:25: warning: implicit declaration of function 'BV' [-Wimplicit-function-declaration]
+   13 |         RCC->AHB1ENR |= BV(3);
+      |                         ^~
+../Src/led.c:15:9: error: 'GPIOD' undeclared (first use in this function)
+   15 |         GPIOD->MODER &= ~(BV(25));
+      |         ^~~~~
+../Src/led.c: In function 'led_on':
+../Src/led.c:28:9: error: 'GPIOD' undeclared (first use in this function)
+   28 |         GPIOD->ODR |= BV(12);
+      |         ^~~~~
+../Src/led.c: In function 'led_off':
+../Src/led.c:32:9: error: 'GPIOD' undeclared (first use in this function)
+   32 |         GPIOD->ODR &= ~(BV(12));
+      |         ^~~~~
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:54:28 **** Incremental Build of configuration Debug for project Led_genric.c ****
+make -j12 all 
+arm-none-eabi-size  Led_genric.c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1032	      4	   1564	   2600	    a28	Led_genric.c.elf
+Finished building: default.size.stdout
+ 
+19:54:28 **** Incremental Build of configuration Debug for project Switch.c ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/my_switch.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/my_switch.d" -MT"Src/my_switch.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/my_switch.o"
+../Src/my_switch.c: In function 'switch_init':
+../Src/my_switch.c:17:31: error: 'O' undeclared (first use in this function)
+   17 |         GPIOA->MODER &= ~(3<<(O*2));
+      |                               ^
+../Src/my_switch.c:17:31: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:37: Src/my_switch.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/main.c: In function 'main':
+../Src/main.c:32:9: warning: implicit declaration of function 'LED_init'; did you mean 'led_init'? [-Wimplicit-function-declaration]
+   32 |         LED_init();
+      |         ^~~~~~~~
+      |         led_init
+../Src/main.c:36:21: warning: implicit declaration of function 'switch_Read' [-Wimplicit-function-declaration]
+   36 |                 if (switch_Read())
+      |                     ^~~~~~~~~~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
