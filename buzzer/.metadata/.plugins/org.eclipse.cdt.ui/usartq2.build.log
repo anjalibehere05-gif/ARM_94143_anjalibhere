@@ -1,0 +1,37 @@
+10:15:31 **** Incremental Build of configuration Debug for project usartq2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:197:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  197 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:230:13: error: invalid storage class for function 'MX_GPIO_Init'
+  230 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:273:1: error: expected declaration or statement at end of input
+  273 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:59:13: warning: 'MX_GPIO_Init' used but never defined
+   59 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:60:13: warning: 'MX_USART2_UART_Init' used but never defined
+   60 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:264:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  264 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:230:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  230 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:197:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  197 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:150:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  150 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+10:15:31 Build Failed. 4 errors, 6 warnings. (took 258ms)
+
