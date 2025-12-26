@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Led_switch_exti0/Src/a5q3ext_intr.c&apos; to &apos;-ext_intr.c&apos;" description="Rename resource &apos;a5q3ext_intr.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/a5q3ext_intr.c" name="-ext_intr.c" stamp="1766635438820" updateReferences="true"/>
+</session>
