@@ -1,0 +1,10 @@
+20:05:49 **** Incremental Build of configuration Debug for project LCD _I2C ****
+make -j12 all 
+arm-none-eabi-size  LCD\ _I2C.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5936	     12	   1572	   7520	   1d60	LCD _I2C.elf
+Finished building: default.size.stdout
+ 
+
+20:05:49 Build Finished. 0 errors, 0 warnings. (took 262ms)
+

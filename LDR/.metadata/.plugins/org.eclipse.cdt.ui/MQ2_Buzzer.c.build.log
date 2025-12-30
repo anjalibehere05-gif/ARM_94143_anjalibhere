@@ -1,0 +1,10 @@
+20:05:49 **** Incremental Build of configuration Debug for project MQ2_Buzzer.c ****
+make -j12 all 
+arm-none-eabi-size  MQ2_Buzzer.c.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16064	     92	   2044	  18200	   4718	MQ2_Buzzer.c.elf
+Finished building: default.size.stdout
+ 
+
+20:05:49 Build Finished. 0 errors, 0 warnings. (took 226ms)
+

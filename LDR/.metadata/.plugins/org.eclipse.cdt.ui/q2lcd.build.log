@@ -1,0 +1,52 @@
+10:09:08 **** Incremental Build of configuration Debug for project q2lcd ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:8: warning: implicit declaration of function 'lcd16x2_i2c_init' [-Wimplicit-function-declaration]
+   97 |   if (!lcd16x2_i2c_init(&hi2c1))
+      |        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:103:9: warning: implicit declaration of function 'lcd16x2_i2c_clear' [-Wimplicit-function-declaration]
+  103 |         lcd16x2_i2c_clear();
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:106:9: warning: implicit declaration of function 'lcd16x2_i2c_setCursor' [-Wimplicit-function-declaration]
+  106 |         lcd16x2_i2c_setCursor(1,5);   // Row 0, Col 0
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:107:9: warning: implicit declaration of function 'lcd16x2_i2c_printf' [-Wimplicit-function-declaration]
+  107 |         lcd16x2_i2c_printf("HELLO");
+      |         ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_I2C1_Init':
+../Core/Src/main.c:182:26: error: 'UART_WORLDLENGTH_88' undeclared (first use in this function)
+  182 |   hi2c1.Init.DutyCycle = UART_WORLDLENGTH_88;
+      |                          ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:182:26: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:183:28: error: 'UART_STOPBITS_1' undeclared (first use in this function)
+  183 |   hi2c1.Init.OwnAddress1=  UART_STOPBITS_1;
+      |                            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:184:31: error: 'UART_PARITY_NONE' undeclared (first use in this function)
+  184 |   hi2c1.Init.AddressingMode=  UART_PARITY_NONE;
+      |                               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:185:33: error: 'UART_MODE_TX_RX' undeclared (first use in this function)
+  185 |   hi2c1.Init.DualAddressMode =  UART_MODE_TX_RX;
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:186:28: error: 'UART_HWCONTROL_NONE' undeclared (first use in this function)
+  186 |   hi2c1.Init.OwnAddress2=  UART_HWCONTROL_NONE;
+      |                            ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:187:33: error: 'UART_OVERSAMPLING_16' undeclared (first use in this function)
+  187 |   hi2c1.Init.GeneralCallMode =  UART_OVERSAMPLING_16;
+      |                                 ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:189:7: warning: implicit declaration of function 'HAL_UART_Init'; did you mean 'HAL_I2C_Init'? [-Wimplicit-function-declaration]
+  189 |   if (HAL_UART_Init(&huart) != HAL_OK)
+      |       ^~~~~~~~~~~~~
+      |       HAL_I2C_Init
+../Core/Src/main.c:189:22: error: 'huart' undeclared (first use in this function)
+  189 |   if (HAL_UART_Init(&huart) != HAL_OK)
+      |                      ^~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:53:13: warning: 'MX_USART2_UART_Init' declared 'static' but never defined [-Wunused-function]
+   53 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+10:09:09 Build Failed. 8 errors, 6 warnings. (took 944ms)
+

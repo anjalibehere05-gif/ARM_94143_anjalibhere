@@ -1,0 +1,10 @@
+12:59:07 **** Incremental Build of configuration Debug for project LDR ****
+make -j12 all 
+arm-none-eabi-size  LDR.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13328	     92	   2044	  15464	   3c68	LDR.elf
+Finished building: default.size.stdout
+ 
+
+12:59:08 Build Finished. 0 errors, 0 warnings. (took 241ms)
+

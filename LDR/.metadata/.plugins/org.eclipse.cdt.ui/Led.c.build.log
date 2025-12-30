@@ -1,0 +1,38 @@
+23:37:15 **** Build of configuration Debug for project Led.c ****
+make -j12 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/itm.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/itm.d" -MT"Src/itm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/itm.o"
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/system_stm32f4xx.d" -MT"Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/system_stm32f4xx.o"
+../Src/led.c: In function 'led_init':
+../Src/led.c:13:9: error: 'RCC' undeclared (first use in this function)
+   13 |         RCC->AHB1ENR |= BV(3);
+      |         ^~~
+../Src/led.c:13:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/led.c:13:25: warning: implicit declaration of function 'BV' [-Wimplicit-function-declaration]
+   13 |         RCC->AHB1ENR |= BV(3);
+      |                         ^~
+../Src/led.c:15:9: error: 'GPIOD' undeclared (first use in this function)
+   15 |         GPIOD->MODER &= ~(BV(25));
+      |         ^~~~~
+../Src/led.c: In function 'led_on':
+../Src/led.c:28:9: error: 'GPIOD' undeclared (first use in this function)
+   28 |         GPIOD->ODR |= BV(12);
+      |         ^~~~~
+../Src/led.c: In function 'led_off':
+../Src/led.c:32:9: error: 'GPIOD' undeclared (first use in this function)
+   32 |         GPIOD->ODR &= ~(BV(12));
+      |         ^~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:36:17: warning: implicit declaration of function 'DelayMs' [-Wimplicit-function-declaration]
+   36 |                 DelayMs(1000);
+      |                 ^~~~~~~
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+23:37:16 Build Failed. 6 errors, 2 warnings. (took 569ms)
+
